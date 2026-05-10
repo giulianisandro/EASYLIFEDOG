@@ -4,6 +4,7 @@ import {
   Dog, Heart, AlertCircle, Cloud, Baby, Moon,
   MessageCircle, Video, CalendarCheck, FileText,
   Home, Eye, Wallet, MapPin, Star, Check, Menu, X,
+  Mail, Phone, Instagram, Facebook, Youtube,
 } from "lucide-react";
 import heroDog from "@/assets/hero-dog.jpg";
 import vetPortrait from "@/assets/vet-portrait.jpg";
