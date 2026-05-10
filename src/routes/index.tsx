@@ -292,7 +292,7 @@ function Index() {
               <span className="font-display text-xl font-semibold" style={{fontFamily:'var(--font-display)'}}>EasyLifeDog</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Consulenze cinofile online con un Medico Veterinario ed Educatore Cinofilo.
+              Consulenze cinofile online con un dottore in medicina veterinaria, educatore cinofilo.
               Una relazione più serena tra te e il tuo cane, ovunque tu sia.
             </p>
             <div className="mt-5 flex items-center gap-3">
