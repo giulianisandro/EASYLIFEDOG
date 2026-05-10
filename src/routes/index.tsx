@@ -156,9 +156,9 @@ function Index() {
           <div>
             <SectionHead eyebrow="Chi sono" title="Non etichetto i cani come problematici. Li ascolto." align="left" />
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Sono il <strong className="text-foreground">Dott. [Cognome]</strong>, laureato in Medicina Veterinaria.
-              Da oltre 10 anni aiuto cani e proprietari a trovare un equilibrio sereno, unendo
-              competenze cliniche e comportamentali.
+              Sono il <strong className="text-foreground">Dottore in Medicina Veterinaria</strong>, educatore cinofilo.
+              <br /><br />
+              10+ anni di esperienza nella relazione uomo-cane.
             </p>
             <ul className="mt-8 space-y-3">
               {["Iscritto all'Albo dei Medici Veterinari","Oltre 10 anni di esperienza sul campo","Consulenze online in tutta Italia"].map((t) => (
