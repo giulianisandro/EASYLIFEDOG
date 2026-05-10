@@ -107,7 +107,6 @@ function Index() {
               </button>
             </div>
             <div className="mt-10 flex items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1.5"><Check className="h-4 w-4 text-primary" /> Albo veterinario</div>
               <div className="flex items-center gap-1.5"><Check className="h-4 w-4 text-primary" /> 10+ anni</div>
             </div>
           </div>
