@@ -160,7 +160,7 @@ function Index() {
               10+ anni di esperienza nella relazione uomo-cane.
             </p>
             <ul className="mt-8 space-y-3">
-              {["Iscritto all'Albo dei Medici Veterinari","Oltre 10 anni di esperienza sul campo","Consulenze online in tutta Italia"].map((t) => (
+              {["Oltre 10 anni di esperienza sul campo","Consulenze online in tutta Italia"].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-foreground">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground"><Check className="h-3.5 w-3.5" /></span>
                   {t}
