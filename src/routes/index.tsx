@@ -4,6 +4,7 @@ import {
   Dog, Heart, AlertCircle, Cloud, Baby, Moon,
   MessageCircle, Video, CalendarCheck, FileText,
   Home, Eye, Wallet, MapPin, Star, Check, Menu, X,
+  Mail, Phone, Instagram, Facebook, Youtube,
 } from "lucide-react";
 import heroDog from "@/assets/hero-dog.jpg";
 import vetPortrait from "@/assets/vet-portrait.jpg";
@@ -281,25 +282,64 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-3">
-          <div>
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-4">
+          <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 text-primary">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 text-primary">
                 <Dog className="h-4 w-4" />
               </span>
-              <span className="font-display text-lg font-semibold" style={{fontFamily:'var(--font-display)'}}>EasyLifeDog</span>
+              <span className="font-display text-xl font-semibold" style={{fontFamily:'var(--font-display)'}}>EasyLifeDog</span>
             </div>
-            <p className="mt-3 text-sm text-muted-foreground max-w-xs">Consulenze cinofile online con un Medico Veterinario ed Educatore.</p>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Consulenze cinofile online con un Medico Veterinario ed Educatore Cinofilo.
+              Una relazione più serena tra te e il tuo cane, ovunque tu sia.
+            </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a href="https://instagram.com" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/15 hover:text-primary">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://facebook.com" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/15 hover:text-primary">
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a href="https://youtube.com" aria-label="YouTube" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition hover:bg-primary/15 hover:text-primary">
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
           </div>
-          <div className="text-sm text-muted-foreground">
-            <h4 className="mb-3 font-semibold text-foreground">Contatti</h4>
-            <p>Email: info@easylifedog.it</p>
-            <p>Telefono: +39 000 000 0000</p>
-            <p className="mt-2">P. IVA: IT00000000000</p>
+
+          <div className="text-sm">
+            <h4 className="mb-4 font-semibold text-foreground">Contatti</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-primary" />
+                <a href="mailto:info@easylifedog.it" className="hover:text-foreground transition">info@easylifedog.it</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" />
+                <a href="tel:+390000000000" className="hover:text-foreground transition">+39 000 000 0000</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span>Consulenze 100% online</span>
+              </li>
+            </ul>
           </div>
-          <div className="text-sm text-muted-foreground md:text-right">
-            <p>© {new Date().getFullYear()} EasyLifeDog</p>
-            <p className="mt-1">Tutti i diritti riservati</p>
+
+          <div className="text-sm">
+            <h4 className="mb-4 font-semibold text-foreground">Informazioni</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><button onClick={() => scrollTo('servizi')} className="hover:text-foreground transition">Servizi</button></li>
+              <li><button onClick={() => scrollTo('chi-sono')} className="hover:text-foreground transition">Chi sono</button></li>
+              <li><a href="#" className="hover:text-foreground transition">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-foreground transition">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-border">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-6 py-5 text-xs text-muted-foreground md:flex-row md:items-center">
+            <p>© {new Date().getFullYear()} EasyLifeDog — Tutti i diritti riservati</p>
+            <p>Dott. Mario Rossi · P. IVA IT00000000000 · Iscr. Albo Veterinari n. 0000</p>
           </div>
         </div>
       </footer>
