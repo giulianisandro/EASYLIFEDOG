@@ -7,7 +7,7 @@ import {
   Home, Eye, Wallet, MapPin, Star, Check, Menu, X,
   Mail, Phone, Instagram, Facebook, Youtube,
 } from "lucide-react";
-import heroDog from "@/assets/hero-dog.jpg";
+import heroDog from "@/assets/ea081e74-7279-40ee-8e64-0f76d7952735.jpg";
 import vetPortrait from "@/assets/vet-portrait.jpg";
 import { ContactModal } from "@/components/ContactModal";
 
