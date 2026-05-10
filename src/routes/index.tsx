@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { openCookiePreferences } from "@/lib/cookieConsent";
 import { useState } from "react";
 import {
   Dog, Heart, AlertCircle, Cloud, Baby, Moon,
