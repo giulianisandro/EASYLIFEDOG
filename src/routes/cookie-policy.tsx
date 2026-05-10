@@ -50,20 +50,66 @@ function CookiePolicyPage() {
           </Section>
 
           <Section title="Tipologie di cookie utilizzati">
-            <ul className="space-y-4">
-              <li>
+            <div className="space-y-6">
+              <div className="rounded-xl border border-border bg-card p-5">
                 <p className="font-semibold text-foreground">Cookie tecnici (necessari)</p>
-                <p>Garantiscono il funzionamento del sito e dei servizi richiesti dall'utente. Non richiedono consenso.</p>
-              </li>
-              <li>
+                <p className="mt-2">
+                  Indispensabili per il funzionamento del sito e dei servizi che richiedi (es. apertura di un modulo
+                  di contatto, memorizzazione delle tue preferenze sui cookie). Non richiedono consenso.
+                </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-foreground/70">A cosa servono in pratica</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
+                  <li>Ricordare la scelta espressa nel banner cookie</li>
+                  <li>Mantenere attiva la sessione di navigazione</li>
+                  <li>Garantire la sicurezza tecnica del sito</li>
+                </ul>
+                <p className="mt-3 text-xs text-foreground/60">
+                  <span className="font-semibold">Esempi:</span> <code className="rounded bg-muted px-1.5 py-0.5">eld-cookie-consent</code> (durata: 12 mesi).
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-border bg-card p-5">
                 <p className="font-semibold text-foreground">Cookie analitici</p>
-                <p>Utilizzati per raccogliere informazioni in forma aggregata su come gli utenti utilizzano il sito, al fine di migliorarne usabilità e contenuti.</p>
-              </li>
-              <li>
+                <p className="mt-2">
+                  Servono a capire <strong className="text-foreground">come gli utenti usano il sito</strong> in forma
+                  aggregata e anonima: quali pagine vengono visitate, quanto tempo si rimane,
+                  da quale dispositivo si accede. Ci aiutano a migliorare contenuti e usabilità,
+                  non vengono usati per identificarti.
+                </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-foreground/70">A cosa servono in pratica</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
+                  <li>Misurare il numero di visitatori e le pagine più viste</li>
+                  <li>Capire da quale fonte arrivi il traffico (es. Google, social, email)</li>
+                  <li>Individuare problemi di navigazione o pagine poco efficaci</li>
+                </ul>
+                <p className="mt-3 text-xs text-foreground/60">
+                  <span className="font-semibold">Esempi tipici di servizi:</span> Google Analytics 4
+                  (<code className="rounded bg-muted px-1.5 py-0.5">_ga</code>, <code className="rounded bg-muted px-1.5 py-0.5">_ga_*</code> — durata fino a 24 mesi),
+                  Plausible / Umami (analitiche privacy-friendly, durata sessione).
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-border bg-card p-5">
                 <p className="font-semibold text-foreground">Cookie di marketing</p>
-                <p>Utilizzati per mostrarti contenuti e messaggi più rilevanti rispetto ai tuoi interessi.</p>
-              </li>
-            </ul>
+                <p className="mt-2">
+                  Permettono di mostrarti <strong className="text-foreground">contenuti e annunci più pertinenti</strong>
+                  ai tuoi interessi su questo sito o su altre piattaforme, e di misurare l'efficacia delle campagne
+                  pubblicitarie. Possono essere installati da partner terzi.
+                </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-foreground/70">A cosa servono in pratica</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
+                  <li>Mostrarti annunci di EasyLifeDog su Facebook, Instagram o Google dopo che hai visitato il sito (retargeting)</li>
+                  <li>Misurare quante persone hanno prenotato una consulenza dopo aver visto un annuncio</li>
+                  <li>Limitare la frequenza con cui ti viene mostrato lo stesso annuncio</li>
+                </ul>
+                <p className="mt-3 text-xs text-foreground/60">
+                  <span className="font-semibold">Esempi tipici di servizi:</span> Meta Pixel
+                  (<code className="rounded bg-muted px-1.5 py-0.5">_fbp</code> — durata 3 mesi),
+                  Google Ads (<code className="rounded bg-muted px-1.5 py-0.5">_gcl_au</code> — durata 3 mesi),
+                  TikTok Pixel (<code className="rounded bg-muted px-1.5 py-0.5">_ttp</code> — durata 13 mesi).
+                </p>
+              </div>
+            </div>
           </Section>
 
           <Section title="Gestione delle preferenze">
