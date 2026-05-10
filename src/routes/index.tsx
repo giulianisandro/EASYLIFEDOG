@@ -332,7 +332,8 @@ function Index() {
               <li><button onClick={() => scrollTo('servizi')} className="hover:text-foreground transition">Servizi</button></li>
               <li><button onClick={() => scrollTo('chi-sono')} className="hover:text-foreground transition">Chi sono</button></li>
               <li><a href="#" className="hover:text-foreground transition">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-foreground transition">Cookie Policy</a></li>
+              <li><Link to="/cookie-policy" className="hover:text-foreground transition">Cookie Policy</Link></li>
+              <li><button onClick={openCookiePreferences} className="hover:text-foreground transition">Preferenze cookie</button></li>
             </ul>
           </div>
         </div>
