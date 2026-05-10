@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "EasyLifeDog – Consulenze cinofile online con Medico Veterinario" },
-      { name: "description", content: "Risolvi i problemi di comportamento del tuo cane con un Medico Veterinario ed Educatore con oltre 10 anni di esperienza. Consulenze online in tutta Italia." },
+      { title: "EasyLifeDog – Consulenze cinofile online con dottore in medicina veterinaria" },
+      { name: "description", content: "Risolvi i problemi di comportamento del tuo cane con un dottore in medicina veterinaria, educatore cinofilo da 10+ anni. Consulenze online in tutta Italia." },
     ],
   }),
 });
@@ -90,7 +90,7 @@ function Index() {
               Migliora la vita <br/>con il tuo <span style={{color:'var(--primary)'}}>cane</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              Consulenze cinofile online con un Medico Veterinario ed Educatore da 10+ anni. Ascolto, comprensione, soluzioni concrete.
+              Consulenze cinofile online con un dottore in medicina veterinaria, educatore cinofilo da 10+ anni. Ascolto, comprensione, soluzioni concrete. 
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <button
@@ -292,7 +292,7 @@ function Index() {
               <span className="font-display text-xl font-semibold" style={{fontFamily:'var(--font-display)'}}>EasyLifeDog</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Consulenze cinofile online con un Medico Veterinario ed Educatore Cinofilo.
+              Consulenze cinofile online con un dottore in medicina veterinaria, educatore cinofilo.
               Una relazione più serena tra te e il tuo cane, ovunque tu sia.
             </p>
             <div className="mt-5 flex items-center gap-3">
