@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "EasyLifeDog – Consulenze cinofile online con Medico Veterinario" },
-      { name: "description", content: "Risolvi i problemi di comportamento del tuo cane con un Medico Veterinario ed Educatore con oltre 10 anni di esperienza. Consulenze online in tutta Italia." },
+      { title: "EasyLifeDog – Consulenze cinofile online con dottore in medicina veterinaria" },
+      { name: "description", content: "Risolvi i problemi di comportamento del tuo cane con un dottore in medicina veterinaria, educatore cinofilo da 10+ anni. Consulenze online in tutta Italia." },
     ],
   }),
 });
