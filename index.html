@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>EasyLifeDog – Consulenze cinofile online</title>
+  <meta name="description" content="Consulenze cinofile online con un dottore in medicina veterinaria. Risolvi i problemi del tuo cane con un educatore esperto. Prima chiamata gratuita.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2C6E2F;
+      --primary-dark: #1F4F21;
+      --accent: #C6A43F;
+      --accent-light: #D9BB62;
+      --beige: #F5F0E8;
+      --cream: #FFFCF8;
+      --gray-bg: #F9F9F9;
+      --text-dark: #1E2A1E;
+      --text-muted: #4A5B4A;
+      --border-light: #E5E0D6;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.03);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.05);
+      --radius-card: 1.5rem;
+      --radius-btn: 3rem;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,252,248,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      background: var(--primary);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links button {
+      background: none;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-links button:hover {
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 1px solid var(--border-light);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-btn);
+      font-weight: 500;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      border-color: var(--primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 5rem;
+      background: linear-gradient(135deg, var(--beige) 0%, var(--cream) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(44,110,47,0.1);
+      color: var(--primary);
+      padding: 0.25rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 90%;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Sezioni */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-light {
+      background: var(--beige);
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header .eyebrow {
+      color: var(--primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.8rem;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: all 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-icon {
+      background: rgba(44,110,47,0.08);
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Chi sono */
+    .chi-sono-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .chi-sono-image img {
+      width: 100%;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: white;
+      padding: 1.8rem;
+      border-radius: var(--radius-card);
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    /* Prezzi */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .plan-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-light);
+      text-align: center;
+    }
+
+    .plan-card.featured {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .price {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 1rem 0;
+    }
+
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .features-list li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .features-list i {
+      color: var(--primary);
+      width: 20px;
+    }
+
+    /* CTA */
+    .cta-banner {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 2rem;
+      margin: 3rem 0;
+    }
+
+    .cta-banner h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner .btn-primary {
+      background: white;
+      color: var(--primary) !important;
+      margin-top: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #1E2A1E;
+      color: #C7D0C7;
+      padding: 3rem 0 2rem;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: #C7D0C7;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer-col button {
+      color: #C7D0C7;
+      background: none;
+      border: none;
+      display: block;
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-col button:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #2A3A2A;
+      font-size: 0.75rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero-grid, .chi-sono-grid {
+        grid-template-columns: 1fr;
+      }
+      .steps-grid, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="#" class="logo">
+      <span class="logo-icon"><i class="fas fa-dog"></i></span>
+      EasyLifeDog
+    </a>
+    <div class="nav-links">
+      <button onclick="document.getElementById('problemi').scrollIntoView({behavior:'smooth'})">Problemi</button>
+      <button onclick="document.getElementById('chi-sono').scrollIntoView({behavior:'smooth'})">Chi sono</button>
+      <button onclick="document.getElementById('come-funziona').scrollIntoView({behavior:'smooth'})">Come funziona</button>
+      <button onclick="document.getElementById('prezzi').scrollIntoView({behavior:'smooth'})">Prezzi</button>
+      <a href="#" class="btn-primary" onclick="alert('📞 Chiama o WhatsApp: 334 301 7958'); return false;">Prenota consulenza</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge"><i class="fas fa-video" style="margin-right: 6px;"></i> Consulenze online in tutta Italia</span>
+        <h1>Migliora la vita <br>con il tuo <span>cane</span></h1>
+        <p>Consulenze cinofile online con un dottore in medicina veterinaria, educatore cinofilo da 10+ anni. Ascolto, comprensione, soluzioni concrete.</p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#" class="btn-primary" onclick="alert('📞 Chiama o WhatsApp: 334 301 7958'); return false;">Parla con il dottore</a>
+          <button class="btn-outline-light" onclick="document.getElementById('problemi').scrollIntoView({behavior:'smooth'})">Scopri come funziona</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://educatore-cinofilo.giulianisandro.it/blog/EDUCATORE_CINOFILO.webp" alt="Dott. Sandro Giuliani, educatore cinofilo">
+      </div>
+    </div>
+  </section>
+
+  <section id="problemi" class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">PROBLEMI CHE RISOLVO</span>
+        <h2>Capisco il tuo cane. E te.</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div><h3>Abbai e distruzione</h3><p>Quando casa diventa un campo di battaglia. Capiamo insieme la causa.</p></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-heart-broken"></i></div><h3>Ansia da separazione</h3><p>Il tuo cane soffre quando esci? Lavoriamo sulla sicurezza emotiva.</p></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-paw"></i></div><h3>Aggressività e risorse</h3><p>Ringhi, morsi, gestione del cibo o degli oggetti. Senza giudizi.</p></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-cloud-moon"></i></div><h3>Paure e fobie</h3><p>Botti, temporali, persone, altri cani: piano di desensibilizzazione.</p></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-baby-carriage"></i></div><h3>Cucciolo morde e sporca</h3><p>Le basi giuste fin da subito, per crescere un adulto sereno.</p></div>
+        <div class="card"><div class="card-icon"><i class="fas fa-dog"></i></div><h3>Cani anziani</h3><p>Cambiamenti emotivi e cognitivi: accompagniamo con dolcezza.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chi-sono" class="section section-light">
+    <div class="container chi-sono-grid">
+      <div class="chi-sono-image">
+        <img src="https://educatore-cinofilo.giulianisandro.it/blog/EDUCATORE_CINOFILO.webp" alt="Dott. Sandro Giuliani">
+      </div>
+      <div>
+        <span class="eyebrow" style="display:inline-block; margin-bottom:0.5rem;">CHI SONO</span>
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Non etichetto i cani come problematici. Li ascolto.</h2>
+        <p style="margin-bottom: 1rem;">Sono il <strong>Dottore in Medicina Veterinaria</strong>, educatore cinofilo. 10+ anni di esperienza nella relazione uomo-cane.</p>
+        <ul style="list-style: none; margin-top: 1.5rem;">
+          <li style="margin-bottom: 0.6rem;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.6rem;"></i> Oltre 10 anni di esperienza sul campo</li>
+          <li style="margin-bottom: 0.6rem;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.6rem;"></i> Consulenze online in tutta Italia</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="come-funziona" class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">COME FUNZIONA</span>
+        <h2>Quattro passi, un percorso chiaro.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-number">1</div><h3>Parlami del tuo cane</h3><p>Un breve modulo o chat iniziale per inquadrare la situazione.</p></div>
+        <div class="step-card"><div class="step-number">2</div><h3>Inviami i video</h3><p>Casa, passeggiate, momenti critici: osservo nel contesto reale.</p></div>
+        <div class="step-card"><div class="step-number">3</div><h3>Videochiamata 1h</h3><p>Ci confrontiamo su Zoom o Google Meet, senza fretta.</p></div>
+        <div class="step-card"><div class="step-number">4</div><h3>Piano + follow-up</h3><p>Ricevi un piano scritto e 2 settimane di supporto via chat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prezzi" class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">SERVIZI E PREZZI</span>
+        <h2>Scegli il percorso giusto per voi.</h2>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card featured">
+          <h3>Consulenza singola</h3>
+          <div class="price">€65 <small>/ singola seduta</small></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Videochiamata di 60 min</li>
+            <li><i class="fas fa-check"></i> Piano comportamentale scritto</li>
+            <li><i class="fas fa-check"></i> 1 settimana di chat</li>
+          </ul>
+          <a href="#" class="btn-primary" style="width:100%; text-align:center;" onclick="alert('📞 Contattaci al 3343017958 per prenotare'); return false;">Inizia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Prenota una chiamata gratuita di 15 minuti</h2>
+      <p>Raccontami il tuo cane. Ti dirò se posso aiutarti — senza impegno.</p>
+      <a href="#" class="btn-primary" onclick="alert('📞 Chiama o WhatsApp: 3343017958'); return false;">Prenota gratis</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><i class="fas fa-dog"></i> EasyLifeDog</div>
+        <p style="font-size: 0.85rem;">Consulenze cinofile online con un dottore in medicina veterinaria, educatore cinofilo. Una relazione più serena tra te e il tuo cane, ovunque tu sia.</p>
+        <div class="social-links" style="margin-top: 1rem;">
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <button onclick="window.location.href='tel:+393343017958'"><i class="fas fa-phone-alt"></i> 334 301 7958</button>
+        <button onclick="window.location.href='mailto:info@easylifedog.it'"><i class="fas fa-envelope"></i> info@easylifedog.it</button>
+      </div>
+      <div class="footer-col">
+        <h4>Informazioni</h4>
+        <button onclick="document.getElementById('problemi').scrollIntoView({behavior:'smooth'})">Problemi</button>
+        <button onclick="document.getElementById('chi-sono').scrollIntoView({behavior:'smooth'})">Chi sono</button>
+        <button onclick="document.getElementById('prezzi').scrollIntoView({behavior:'smooth'})">Prezzi</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 EasyLifeDog — Tutti i diritti riservati. Dott. Sandro Giuliani</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      const nav = document.querySelector('.nav-links');
+      if (nav.style.display === 'flex') nav.style.display = 'none';
+      else nav.style.display = 'flex';
+    });
+  }
+  window.addEventListener('resize', () => {
+    const nav = document.querySelector('.nav-links');
+    if (window.innerWidth > 900) nav.style.display = 'flex';
+    else if (nav.style.display === 'flex') nav.style.display = 'none';
+  });
+</script>
+</body>
+</html>
