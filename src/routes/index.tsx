@@ -7,8 +7,6 @@ import {
   Home, Eye, Wallet, MapPin, Star, Check, Menu, X,
   Mail, Phone, Instagram, Facebook, Youtube,
 } from "lucide-react";
-import heroDog from "@/assets/ea081e74-7279-40ee-8e64-0f76d7952735.jpg";
-import vetPortrait from "@/assets/vet-portrait.jpg";
 import { ContactModal } from "@/components/ContactModal";
 
 export const Route = createFileRoute("/")({
@@ -111,14 +109,7 @@ function Index() {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-primary/10 blur-2xl" />
-            <img
-              src={heroDog}
-              alt="Donna serena con il suo cane in un prato"
-              width={1536}
-              height={1024}
-              className="relative aspect-[4/3] w-full rounded-3xl object-cover shadow-soft"
-            />
+            {/* Immagine hero rimossa come richiesto */}
           </div>
         </div>
       </section>
@@ -145,9 +136,10 @@ function Index() {
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-3 rounded-3xl" style={{background:'var(--sage)', opacity:0.25}} />
             <img
-              src={vetPortrait}
-              alt="Dott. veterinario sorridente con cucciolo"
-              width={896} height={1152}
+              src="https://educatore-cinofilo.giulianisandro.it/blog/EDUCATORE_CINOFILO.webp"
+              alt="Dott. Sandro Giuliani, educatore cinofilo a Torino"
+              width={896}
+              height={1152}
               loading="lazy"
               className="relative w-full rounded-3xl object-cover shadow-soft"
             />
@@ -244,21 +236,30 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonianze */}
-      <section className="bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <SectionHead eyebrow="Testimonianze" title="Storie di equilibrio ritrovato." />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.author} className="rounded-2xl bg-card p-7 shadow-card border border-border">
-                <div className="flex gap-0.5 text-primary">
-                  {Array.from({length:5}).map((_,i)=><Star key={i} className="h-4 w-4 fill-current" />)}
-                </div>
-                <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
-                <figcaption className="mt-5 text-sm text-muted-foreground">— {t.author}, {t.city}</figcaption>
-              </figure>
-            ))}
+      {/* Recensioni Google - iframe ufficiale */}
+      <section className="bg-secondary/40 py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHead 
+            eyebrow="La mia reputazione" 
+            title="Cosa dicono i miei clienti" 
+          />
+          <div className="mt-12 flex justify-center">
+            <div className="w-full max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d90186.5893724357!2d7.3892856!3d45.1580327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47880b586ab128eb%3A0xdf4829c5de3308a4!2sDott.%20Sandro%20Giuliani%2C%20educatore%20cinofilo%20a%20domicilio%20(Easylifedog)!5e0!3m2!1sit!2sit!4v1740000000000!5m2!1sit!2sit"
+                width="100%"
+                height="500"
+                style={{ border: 0, borderRadius: '0.75rem' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Recensioni Google - EasyLifeDog"
+              />
+            </div>
           </div>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            ⭐️⭐️⭐️⭐️⭐️ <strong>Valutazione media 5.0</strong> – Clicca sulla scheda per leggere tutte le recensioni vere su Google
+          </p>
         </div>
       </section>
 
@@ -388,10 +389,4 @@ const whyOnline = [
   { icon: Eye, title: "Lo osservo nel reale", desc: "Vedo davvero come vive." },
   { icon: Wallet, title: "Costi ridotti", desc: "Niente spostamenti né attese." },
   { icon: MapPin, title: "Ovunque tu sia", desc: "Tutta Italia, anche all'estero." },
-];
-
-const testimonials = [
-  { quote: "Il cane ringhiava ai bambini. In 3 settimane è cambiato tutto. Finalmente riusciamo a vivere sereni.", author: "Maria", city: "Milano" },
-  { quote: "Pensavo fosse un cane impossibile. Il dottore mi ha aiutato a capirlo davvero, non a 'correggerlo'.", author: "Luca", city: "Roma" },
-  { quote: "L'ansia da separazione di Birba era diventata insostenibile. Ora resta a casa tranquilla.", author: "Giulia", city: "Torino" },
 ];
